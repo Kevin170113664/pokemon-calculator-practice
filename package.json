@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "lodash": "4.17.4",
+    "mocha": "^3.4.1"
+  }
+}
