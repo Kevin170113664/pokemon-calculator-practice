@@ -1,5 +1,11 @@
 ## 精灵宝可梦属性克制练习
 
+#### 准备环境
+```bash
+$ npm install
+$ npm test
+```
+
 [妙蛙种子]:http://res.pokemon.name/common/pokemon/pgl/001.00.png
 [小火龙]:http://res.pokemon.name/common/pokemon/pgl/004.00.png
 [杰尼龟]:http://res.pokemon.name/common/pokemon/pgl/007.00.png
