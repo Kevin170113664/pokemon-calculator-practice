@@ -30,7 +30,14 @@ describe('pokemon calculator', () => {
   it('should calculate composite types pokemon weakness', function () {
     const Charizard = pokemon(type.fire, type.flying)
     assert.deepEqual(Charizard.getWeakness(), {
-      electric:2, water:2, rock:4
+      electric: 2, water: 2, rock: 4
+    })
+  });
+
+  it('should calculate composite types pokemon resistance in reverse battle', function () {
+    const Charizard = pokemon(type.fire, type.flying)
+    assert.deepEqual(Charizard.getReverseResistance(), {
+      electric: 0.5, water: 0.5, rock: 0.25
     })
   });
 });
