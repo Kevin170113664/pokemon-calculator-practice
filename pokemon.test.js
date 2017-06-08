@@ -12,4 +12,12 @@ describe('pokemon calculator', () => {
     assert.deepEqual(Eevee.getResistance(), {ghost: 0})
   });
 
+  it('should calculate single type pokemon weakness', function () {
+    const Pikachu = pokemon(type.electric)
+    assert.deepEqual(Pikachu.getWeakness(), {ground: 2})
+
+    const Eevee = pokemon(type.normal)
+    assert.deepEqual(Eevee.getWeakness(), {fighting: 2})
+  });
+
 });
