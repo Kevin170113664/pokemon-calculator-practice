@@ -26,4 +26,11 @@ describe('pokemon calculator', () => {
       ground: 0, fire: 0.5, steel: 0.5, fairy: 0.5, bug: 0.25, grass: 0.25, fighting: 0.5
     })
   });
+
+  it('should calculate composite types pokemon weakness', function () {
+    const Charizard = pokemon(type.fire, type.flying)
+    assert.deepEqual(Charizard.getWeakness(), {
+      electric:2, water:2, rock:4
+    })
+  });
 });
