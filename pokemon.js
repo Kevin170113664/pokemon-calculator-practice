@@ -18,11 +18,11 @@ const getDefenceFactor = (types, isReverse = false) => {
         _.each(defenceFactor, (value, type) => newFactor[type] = reverseMapping[value])
         return newFactor
       }
-      return Object.assign({}, _reverse(type.weakness), _reverse(type.resistance));
+      return Object.assign({}, _reverse(type.weakness), _reverse(type.resistance))
     }
 
-    return Object.assign({}, type.weakness, type.resistance);
-  };
+    return Object.assign({}, type.weakness, type.resistance)
+  }
 
   return _.mergeWith(getSingleTypeFactor(types[0]), getSingleTypeFactor(types[1]),
     (obj, src) => {
