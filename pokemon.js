@@ -3,8 +3,11 @@ const _ = require('lodash')
 const pokemon = (...types) => {
   return {
     getResistance: () => {
-      const defenceFactor = _.mergeWith(Object.assign({}, types[0].weakness, types[0].resistance),
-        Object.assign({}, types[1].weakness, types[1].resistance),
+      let getSingleTypeFactor = (type) => {
+        if (!type) return {}
+        return Object.assign({}, type.weakness, type.resistance);
+      };
+      const defenceFactor = _.mergeWith(getSingleTypeFactor(types[0]), getSingleTypeFactor(types[1]),
         (obj, src) => {
           obj = _.isNumber(obj) ? obj : 1
           src = _.isNumber(src) ? src : 1
@@ -14,7 +17,7 @@ const pokemon = (...types) => {
       return _.pickBy(defenceFactor, factor => factor < 1)
     },
     getWeakness: () => {
-      return types.weakness
+      return types[0].weakness
     }
   }
 }
