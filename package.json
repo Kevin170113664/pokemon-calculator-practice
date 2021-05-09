@@ -3,7 +3,7 @@
     "test": "mocha pokemon.test.js"
   },
   "devDependencies": {
-    "lodash": ">=4.17.11",
+    "lodash": ">=4.17.21",
     "mocha": "^3.4.1"
   }
 }
